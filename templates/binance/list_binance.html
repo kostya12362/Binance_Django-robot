@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="page-header">Orders</h1>
+        <p>
+            <button type="button"
+                    class="btn btn-primary js-create-order"
+                    data-url="{% url 'binanceApp:order_create' %}">
+              <span class="glyphicon glyphicon-plus"></span>
+              New order
+            </button>
+        </p>
+    <h1>MA</h1><h1 id = "ma_display"></h1>
+    <table class="table" id="order-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+          <th>Status</th>
+          <th>Date create</th>
+          <th>Date update</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% include 'binance/partial_order_list.html' %}
+
+    </tbody>
+  </table>
+
+
+    <div class="modal fade" id="modal-order">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      </div>
+    </div>
+    </div>
+{% endblock %}

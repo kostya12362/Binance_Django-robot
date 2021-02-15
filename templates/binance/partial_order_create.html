@@ -1,0 +1,24 @@
+<form method="post" class="js-order-create-form" action="{% url "binanceApp:order_create" %}">
+    {% csrf_token %}
+    <div class="modal-header">
+        <h4 class="modal-title">Create a new Oder</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeForm">
+            <span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+        <div class="modal-footer">
+            <button type="button" id="closeForm" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Create Order</button>
+        </div>
+</form>
