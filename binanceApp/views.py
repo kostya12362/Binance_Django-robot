@@ -115,5 +115,5 @@ def order_create(request):
 
 client.get_avg_price(symbol='BNBBTC')
 bsm = BinanceSocketManager(client)
-conn_key = bsm.start_kline_socket('BTCUSDT', btc_trade_history, interval=Client.KLINE_INTERVAL_5MINUTE)
+conn_key = bsm.start_kline_socket('BTCUSDT', btc_trade_history, interval=Client.KLINE_INTERVAL_15MINUTE)
 print(bsm.start())
