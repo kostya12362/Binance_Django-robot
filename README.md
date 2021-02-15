@@ -21,6 +21,7 @@ Installing packages
 ```linux
 $ pip install -r requirements.txt
 ```
+if file views.py add api key 
 Start
 ```linux
 $ python manage.py runserver
